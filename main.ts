@@ -487,7 +487,7 @@ function expload () {
         `)
     lantern.setLightBandWidth(7)
     controller.moveSprite(mySprite, 0, 0)
-    pause(2000)
+    pause(1550)
     mySprite = sprites.create(img`
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
@@ -814,7 +814,7 @@ forever(function () {
     music.playMelody("G F E F E D C D ", 396)
 })
 forever(function () {
-    if (info.score() == 20) {
+    if (info.score() == 30) {
         game.showLongText("You got all 20 snakes!!!", DialogLayout.Center)
         game.over(true)
     }
