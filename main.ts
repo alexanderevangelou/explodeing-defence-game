@@ -802,7 +802,24 @@ lantern.startLanternEffect(mySprite)
 lantern.setLightBandWidth(10)
 lantern.setBreathingEnabled(true)
 scene.cameraFollowSprite(mySprite)
-game.onUpdateInterval(5000, function () {
+game.onUpdateInterval(1000, function () {
+    statusbar.value += 10
+})
+forever(function () {
+    music.playMelody("C5 B A B E E E E ", 396)
+    music.playMelody("F F F F - - - - ", 396)
+    music.playMelody("C5 B A B E E E E ", 396)
+    music.playMelody("F F F F E E E E ", 396)
+    music.playMelody("C5 B A B A G F G ", 396)
+    music.playMelody("G F E F E D C D ", 396)
+})
+forever(function () {
+    if (info.score() == 20) {
+        game.showLongText("You got all 20 snakes!!!", DialogLayout.Center)
+        game.over(true)
+    }
+})
+game.onUpdateInterval(3000, function () {
     enemies = sprites.createProjectileFromSide(img`
         . . . . c c c c c c . . . . . . 
         . . . c 6 7 7 7 7 6 c . . . . . 
@@ -864,21 +881,4 @@ game.onUpdateInterval(5000, function () {
     100,
     true
     )
-})
-game.onUpdateInterval(1000, function () {
-    statusbar.value += 10
-})
-forever(function () {
-    music.playMelody("C5 B A B E E E E ", 396)
-    music.playMelody("F F F F - - - - ", 396)
-    music.playMelody("C5 B A B E E E E ", 396)
-    music.playMelody("F F F F E E E E ", 396)
-    music.playMelody("C5 B A B A G F G ", 396)
-    music.playMelody("G F E F E D C D ", 396)
-})
-forever(function () {
-    if (info.score() == 20) {
-        game.showLongText("You got all 20 snakes!!!", DialogLayout.Center)
-        game.over(true)
-    }
 })
