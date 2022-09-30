@@ -698,7 +698,7 @@ game.setDialogCursor(img`
     `)
 game.setDialogTextColor(9)
 game.showLongText("Hello. You need to defend your trees from green snakes. To do so press A to explode and create a new self to explode also press B to make lasers but it takes 10 seconds to recharge every time you shoot. Also you can't see everything so before exploding you see nearly the whole map until you choose where to explode. That's it all for now. Make sure you remember!!! ", DialogLayout.Full)
-info.setLife(10)
+info.setLife(3)
 info.setScore(0)
 is_shooting = true
 exploading = false
@@ -815,7 +815,7 @@ forever(function () {
 })
 forever(function () {
     if (info.score() == 30) {
-        game.showLongText("You got all 20 snakes!!!", DialogLayout.Center)
+        game.showLongText("You got all 30 snakes!!!", DialogLayout.Center)
         game.over(true)
     }
 })
