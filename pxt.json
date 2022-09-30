@@ -1,5 +1,6 @@
 {
     "name": "explodeing defence game",
+    "version": "0.1.0",
     "description": "",
     "dependencies": {
         "device": "*",
